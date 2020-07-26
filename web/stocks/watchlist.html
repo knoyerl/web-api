@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.watchlist-loading{
+ 			background-color: yellow;
+		}
+		.watchlist-loaded{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="watchlist">
+		Loading...
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		(function(){
+
+			const $watchlist = $(".watchlist").addClass("watchlist-loading");
+			$.ajax("/api/stocks/watchlist")
+				.done((data) => {
+					console.log(data);
+
+					const li = data.items.map(item => `<li>${item.name} - ${item.price}</li>`);
+
+					$watchlist
+						.removeClass("watchlist-loading")
+						.addClass("watchlist-loaded")
+						.html(`<ul>${li.join("")}</ul>`);
+				});
+
+		})();
+	</script>
+</body>
+</html>

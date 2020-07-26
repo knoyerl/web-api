@@ -1,0 +1,23 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "description": "Practice consuming web APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knoyerl/web-api.git"
+  },
+  "author": "Lee and Brad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knoyerl/web-api/issues"
+  },
+  "homepage": "https://github.com/knoyerl/web-api#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
